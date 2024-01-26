@@ -1,0 +1,36 @@
+.category-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.category-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.category-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-buttons button:hover {
+  background-color: #aec6cf;
+}
+
+.category-buttons button.other-button {
+  grid-column: 1 / -1;
+  background-color: rgba(113, 232, 113, 0.816);
+}
