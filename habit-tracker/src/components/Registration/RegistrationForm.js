@@ -1,6 +1,5 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import {useState} from "react";
 import Box from '@mui/material/Box';
 
 export default function RegistrationForm({updateCurView, updateUserId}){
