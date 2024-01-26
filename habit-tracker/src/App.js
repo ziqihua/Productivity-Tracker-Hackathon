@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginPage from './components/LoginPage/LoginPage';
+import Registration from './components/Registration/Registration';
+import {React, useState} from 'react';
 
 function App() {
+
+  let dicViewsNumbers = {};
+  dicViewsNumbers["LoginPage"] = 0;
+  dicViewsNumbers['Registration'] = 1;
+
+  const [curView, setCurView] = useState(dicViewsNumbers["LoginPage"]);  // the state to decide which view to present
+  // for testing; should remove or update during development
+  const [curUserId, setUserId] = useState(-1);
+
+  let view;
+
+  if (curView === dicViewsNumbers["LoginPage"]) {
+    view = <LoginPage updateCurView = {setCurView} updateUserId = {setUserId} />
+  } else if (curView === dicViewsNumbers['Registration']) {
+    view = <Registration updateCurView = {setCurView} updateUserId = {setUserId} />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {view}
+    </>
   );
 }
 
