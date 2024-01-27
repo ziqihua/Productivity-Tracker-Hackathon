@@ -21,6 +21,11 @@
 }
 
 .badge-category {
-  color: brown;
+  color: #1721ea;
   font-weight: bold; 
+}
+
+.duration{
+  color: #ed4f33;
+  font-weight: bold;
 }
