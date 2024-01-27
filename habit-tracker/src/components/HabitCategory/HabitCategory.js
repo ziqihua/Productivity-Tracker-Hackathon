@@ -1,12 +1,12 @@
 import "../CSS/HabitCategory.css";
 
 const categories = [
-  "Job-related",
-  "Healthy body",
-  "Mental well-being",
-  "Everyday study",
-  "Must-done trivial matters",
-  "Socializing",
+  "Job-related", 
+  "Health", 
+  "Education", 
+  "Social", 
+  "Hobby",  
+  "Reflect",
   "Confirm",
 ];
 

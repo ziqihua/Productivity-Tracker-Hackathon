@@ -1,5 +1,5 @@
 import "../CSS/Tracker.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const initialHabits = [
   {
@@ -8,6 +8,7 @@ const initialHabits = [
     frequency: "7 days/week",
     daysCompleted: [true, false, true, true, false, false, false],
     progress: "3/7",
+    category: "Job-related",
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const initialHabits = [
     frequency: "5 days/week",
     daysCompleted: [true, true, true, false, false, false, false],
     progress: "3/5",
+    category: "Job-related",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const initialHabits = [
     frequency: "4 days/week",
     daysCompleted: [true, false, true, false, true, false, true],
     progress: "4/4",
+    category: "Job-related",
   },
   {
     id: 4,
@@ -29,12 +32,31 @@ const initialHabits = [
     frequency: "3 days/week",
     daysCompleted: [true, false, true, true, false, false, false],
     progress: "3/3",
+    category: "Job-related",
+  },
+  {
+    id: 5,
+    title: "Hit the gym",
+    frequency: "3 days/week",
+    daysCompleted: [true, false, false, false, false, true, false],
+    progress: "2/3",
+    category: "Health",
   },
   // ... other habits
 ];
 
+const allCategories = [
+  "Job-related",
+  "Health",
+  "Education",
+  "Social",
+  "Hobby",
+  "Reflect",
+];
+
 function Tracker() {
   const [habits, setHabits] = useState(initialHabits);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   // Function to toggle the completion status of a habit for a given day
   const toggleDay = (habitId, dayIndex) => {
@@ -95,28 +117,56 @@ function Tracker() {
   const calculateProgressFraction = (daysCompleted, frequency) => {
     const completed = daysCompleted.filter(Boolean).length; // Count the true values
     const frequencyNumber = parseInt(frequency.split(" ")[0], 10); // Extract the number from the frequency string
-    return completed / frequencyNumber;
+    return completed / frequencyNumber; // This will give a number between 0 and 1
   };
 
-  const sortedHabits = habits
-    .map(habit => ({
+  const sortedAndFilteredHabits = habits
+    .map((habit) => ({
       ...habit,
-      progressFraction: calculateProgressFraction(habit.daysCompleted, habit.frequency),
-      isComplete: calculateProgressFraction(habit.daysCompleted, habit.frequency) === 1,
+      progressFraction: calculateProgressFraction(
+        habit.daysCompleted,
+        habit.frequency
+      ),
+      isComplete:
+        calculateProgressFraction(habit.daysCompleted, habit.frequency) === 1,
     }))
     .sort((a, b) => {
       if (a.isComplete) return 1; // Move completed habits to the end
       if (b.isComplete) return -1; // Keep uncompleted habits at the beginning
-      return 0; // Keep original order among uncompleted habits
+      return 0; // Keep original order among uncompleted habits)
     });
+
+  // Function to update the selected categories
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  useEffect(() => {
+    // This effect will automatically filter the habits when selectedCategory changes.
+    setHabits(
+      initialHabits.filter(
+        (habit) =>
+          selectedCategory === "" || habit.category === selectedCategory
+      )
+    );
+  }, [selectedCategory]); // Depend on selectedCategory
 
   return (
     <div className="habit-tracker">
       <div className="header">
         <h2>My Habit Tracker</h2>
-        <button className="filter-category">Filter category</button>
+        <div className="filter-container">
+          <select value={selectedCategory} onChange={handleCategoryChange}>
+            <option value="">All Categories</option>
+            {allCategories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      {sortedHabits.map((habit) => (
+      {sortedAndFilteredHabits.map((habit) => (
         <div
           key={habit.id}
           className={`habit ${habit.isComplete ? "complete" : ""}`}

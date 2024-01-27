@@ -23,7 +23,7 @@
   gap: 10px;
   cursor: grab;
 }
-  
+
 .frequency,
 .progress {
   text-align: center;
@@ -79,8 +79,21 @@
 }
 
 .habit.complete {
-    /* Style for completed habits */
-    opacity: 0.9; 
-    cursor: default; 
-    background-color: rgba(113, 232, 113, 0.816);
+  /* Style for completed habits */
+  opacity: 0.9;
+  cursor: default;
+  background-color: rgba(113, 232, 113, 0.816);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-container select {
+  margin-right: 10px;
+}
+
+.filter-container button {
+  padding: 5px 10px;
 }
