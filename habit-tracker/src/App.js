@@ -20,6 +20,8 @@ function App() {
   dicViewsNumbers["LoginPage"] = 0;
   dicViewsNumbers['Registration'] = 1;
   dicViewsNumbers['TodoList'] = 2;
+  dicViewsNumbers['Tracker'] = 3;
+  dicViewsNumbers['Badges'] = 4;
 
   const [curView, setCurView] = useState(dicViewsNumbers["Tracker"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
@@ -35,7 +37,7 @@ function App() {
   } else if (curView === dicViewsNumbers['Tracker']) {
     view = <Tracker updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
   } else if (curView === dicViewsNumbers['Badges']) {
-    view = <Tracker updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
+    view = <Badges updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
   }
 
   return (

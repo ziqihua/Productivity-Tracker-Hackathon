@@ -11,6 +11,18 @@ function SidebarPanel(props) {
         props.updateCurView(0);
     }
 
+    const handleToDo = (e) => {
+        props.updateCurView(2);
+    }
+
+    const handleTracker = (e) => {
+        props.updateCurView(3);
+    }
+
+    const handleBadges = (e) => {
+        props.updateCurView(4);
+    }
+
 
     return (
         <div id="sidebar-panel" style={({ height: "100vh" }, { display: "flex" })}>
