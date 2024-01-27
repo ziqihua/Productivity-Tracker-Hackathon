@@ -1,0 +1,26 @@
+.badges-container {
+    /* Add your container styles here */
+  }
+  
+  .category {
+    /* Add your category row styles here */
+  }
+  
+  .badges {
+    display: flex;
+    /* Add additional styles to lay out your badges in a row */
+  }
+  
+  .badge {
+    /* Add your badge styles here */
+    opacity: 0.4; /* Make locked badges appear faded */
+  }
+  
+  .badge.unlocked {
+    opacity: 1; /* Make unlocked badges appear fully visible */
+  }
+  
+  .note {
+    /* Add your note styles here */
+  }
+  

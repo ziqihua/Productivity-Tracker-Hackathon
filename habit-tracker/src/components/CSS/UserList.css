@@ -1,0 +1,52 @@
+.user-lists {
+  background-color: rgba(113, 232, 113, 0.816);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: auto;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: auto;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.community-filter {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.community-filter label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.community-filter select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
