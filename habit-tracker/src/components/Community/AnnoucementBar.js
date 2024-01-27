@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../CSS/AnnoucementBar.css";
 import Marquee from "react-fast-marquee";
 
