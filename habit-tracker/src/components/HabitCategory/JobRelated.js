@@ -19,7 +19,9 @@ function JobCategory({ updateCurView }) {
 
   const handleJobCategoryClick = (category) => {
     if (category === "Confirm") {
-      updateCurView(8);
+      if (selectedCategories.length > 0) {
+        updateCurView(8);
+      }
     } else {
       setSelectedCategories((prev) => {
         if (prev.includes(category)) {
@@ -42,11 +44,14 @@ function JobCategory({ updateCurView }) {
             onClick={() => handleJobCategoryClick(category)}
             className={
               category === "Confirm"
-                ? "other-button"
+                ? selectedCategories.length > 0
+                  ? "other-button"
+                  : "other-button disabled"
                 : selectedCategories.includes(category)
                 ? "selected-category"
                 : ""
             }
+            disabled={category === "Confirm" && selectedCategories.length === 0}
           >
             {category}
           </button>

@@ -18,7 +18,9 @@ function TaskRecommendation({ updateCurView }) {
 
   const handleTaskClick = (task) => {
     if (task === "Confirm") {
-      updateCurView(3);
+      if (selectedCategories.length > 0) {
+        updateCurView(3);
+      }
     } else {
       toggleTask(task);
     }
@@ -74,7 +76,7 @@ function TaskRecommendation({ updateCurView }) {
   return (
     <div className="task-recommendation-container">
       <div className="task-recommendation-header">
-        <h1>Task Recommendation</h1>
+        <h2>Task Recommendation</h2>
       </div>
       <div className="task-recommendation-buttons">
         {taskRecommendations.map((task) => (
@@ -83,7 +85,9 @@ function TaskRecommendation({ updateCurView }) {
             onClick={() => handleTaskClick(task)}
             className={
               task === "Confirm"
-                ? "other-button"
+                ? selectedCategories.length > 0
+                  ? "other-button"
+                  : "other-button disabled"
                 : selectedCategories.includes(task) ||
                   (task === "Build my Own Habit" &&
                     customHabit &&
@@ -91,6 +95,7 @@ function TaskRecommendation({ updateCurView }) {
                 ? "selected-category"
                 : ""
             }
+            disabled={task === "Confirm" && selectedCategories.length === 0}
           >
             {task}
           </button>
