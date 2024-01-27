@@ -1,22 +1,21 @@
 .user-lists {
-  background-color: rgba(113, 232, 113, 0.816);
+  background-color: #dbebe3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
   width: auto;
 }
 
 .user-item {
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: auto;
   margin-bottom: 10px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .profile-photo {
@@ -24,10 +23,7 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-.user-name {
-  font-weight: bold;
+  background-color: white;
 }
 
 .community-filter {
@@ -49,4 +45,11 @@
   border-radius: 5px;
   background-color: white;
   cursor: pointer;
+}
+
+.user-lists > * { 
+  width: 100%; 
+  text-align: center; 
+  margin: 0;
+  padding: 10px;
 }

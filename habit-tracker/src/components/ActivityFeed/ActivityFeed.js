@@ -10,6 +10,6 @@ function ActivityFeed() {
             <Post name = "Nollie" text = "Working hard" profilePic = "https://cdn-icons-png.flaticon.com/512/13542/13542450.png" achievement = "7 weeks staying habitual for education"/> 
         </Grid>
       </Grid>
-    );
+    ); 
   }
 export default ActivityFeed;
