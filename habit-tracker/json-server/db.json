@@ -1,18 +1,83 @@
 {
-    "User": [
-      { "id": 1, "email": "a title", "userName": "user1", "password": 123, "community": "Job-related"},
-      { "id": 2, "email": "a title", "userName": "user2", "password": 123, "community": "Job-related"}
-    ],
-    "Habit": [
-      { "id": 1, "userId": 1, "category": "Job-related", "title": "Leetcode", "frequencyt": 3, "progress": 1, "mark": [2], "description": "Write two leetcode medium questions every day", "complete": false },
-      { "id": 2, "userId": 1, "category": "Everyday Study", "title": "Daily Study", "frequencyt": 7, "progress": 2, "mark": [1, 2], "description": "Study for 2 hours every day", "complete": false}
-    ],
-    "Badges": [
-        {"id": 1, "userId": 1, "count": 3, "category": "Job-related"},
-        {"id": 2, "userId": 1, "count": 2, "category": "Everyday Study"}
-    ],
-    "Posts": [
-        {"id": 1, "userId": 1, "text_content": "Hardworking", "type": "badge"},
-        {"id": 1, "userId": 2, "text_content": "", "type": "habit"}
-    ]
+  "User": [
+    {
+      "id": "1",
+      "userEmail": "123@123",
+      "userName": "user1",
+      "userPassword": "123",
+      "community": "Job-related"
+    },
+    {
+      "id": "2",
+      "userEmail": "test@123",
+      "userName": "user2",
+      "userPassword": "123",
+      "community": "Job-related"
+    },
+    {
+      "id": "e091",
+      "userName": "austin",
+      "userEmail": "austinkt@seas.upenn.edu",
+      "userPassword": "123",
+      "community": "",
+      "photo": "https://cdn-icons-png.flaticon.com/512/13542/13542444.png"
+    }
+  ],
+  "Habit": [
+    {
+      "id": "1",
+      "userId": "e091",
+      "category": "Job-related",
+      "title": "Leetcode",
+      "frequencyt": 3,
+      "progress": 1,
+      "mark": [
+        2
+      ],
+      "description": "Write two leetcode medium questions every day",
+      "complete": false
+    },
+    {
+      "id": "2",
+      "userId": "e091",
+      "category": "Everyday Study",
+      "title": "Daily Study",
+      "frequencyt": 7,
+      "progress": 2,
+      "mark": [
+        1,
+        2
+      ],
+      "description": "Study for 2 hours every day",
+      "complete": false
+    }
+  ],
+  "Badges": [
+    {
+      "id": "1",
+      "userId": 1,
+      "count": 3,
+      "category": "Job-related"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "count": 2,
+      "category": "Everyday Study"
+    }
+  ],
+  "Posts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "text_content": "Hardworking",
+      "type": "badge"
+    },
+    {
+      "id": "1",
+      "userId": 2,
+      "text_content": "",
+      "type": "habit"
+    }
+  ]
 }
