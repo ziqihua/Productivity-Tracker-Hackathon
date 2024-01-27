@@ -2,26 +2,25 @@ import "../CSS/AnnoucementBar.css";
 import Marquee from "react-fast-marquee";
 
 function AnnouncementBar() {
+    const announcements = [
+        { name: "austin", badge: "job hunting", duration: "3 weeks" },
+        { name: "grace", badge: "health", duration: "1 week" },
+        // Add more announcements here
+      ];
+
   return (
     <div className="announcement-bar">
-      <div className="announcement-content">
-        <Marquee speed={60} gradient={false} pauseOnHover>
-          <div className="text1">
+      <Marquee speed={60} gradient={false} pauseOnHover>
+        {announcements.map((announcement, index) => (
+          <div key={index} className="announcement-item">
             <p>
-              🎉 <span className="name">austin</span> just earned the{" "}
-              <span className="badge-categoty">job hunting</span> badge by being
-              consistent for 3 weeks 🎉
+              🎉 <span className="name">{announcement.name}</span> just earned the{" "}
+              <span className="badge-category">{announcement.badge}</span> badge by being
+              consistent for {announcement.duration} 🎉
             </p>
           </div>
-          <div className="text2">
-            <p>
-              🎉 <span className="name">grace</span> just earned the{" "}
-              <span className="badge-categoty">health</span> badge by being
-              consistent for 1 week 🎉
-            </p>
-          </div>
-        </Marquee>
-      </div>
+        ))}
+      </Marquee>
     </div>
   );
 }

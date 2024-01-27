@@ -7,30 +7,20 @@
   font-size: 0.8rem;
 }
 
-.announcement-content {
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-}
+.announcement-item {
+    margin-right: 50px;
+  }
 
-.text1 p {
+.announcement-content p {
   margin-right: 2rem;
-}
-
-.text2 p:not(:last-child) {
-  margin-right: 2rem;
-}
-
-.text2 p:last-child {
-  margin-right: 1rem;
 }
 
 .name {
-    color:rgb(170, 66, 198);
-    font-weight: bold;
+  color: rgb(170, 66, 198);
+  font-weight: bold;
 }
 
-.badge-categoty{
-    color:brown;
-    font-weight: bold;
+.badge-categoty {
+  color: brown;
+  font-weight: bold;
 }
