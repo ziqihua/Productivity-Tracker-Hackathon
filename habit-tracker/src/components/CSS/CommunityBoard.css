@@ -1,0 +1,21 @@
+.community-board-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.top-section {
+  margin-bottom: 20px;
+}
+
+.bottom-section {
+  display: flex;
+  gap: 20px; 
+}
+
+.activity-feed {
+  flex: 3; 
+  padding: 20px; 
+  border: 1px solid #ccc;
+  background-color: #def; 
+}
