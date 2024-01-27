@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockPersonRoundedIcon from '@mui/icons-material/LockPersonRounded';
-import '../css/LoginPage.css';
+import '../CSS/LoginPage.css';
 import LoginForm from './LoginForm';
 
 export default function LoginPage(props){

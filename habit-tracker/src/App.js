@@ -6,6 +6,8 @@ import LandingPage from './components/LandingPage/LandingPage';
 import HabitCategory from './components/HabitCategory/HabitCategory';
 import JobCategory from './components/HabitCategory/JobRelated';
 import TaskRecommendation from './components/TaskRecommendation/TaskRecommendation';
+import Sidebar from './components/Sidebar/Sidebar';
+
 
 function App() {
 
@@ -14,7 +16,6 @@ function App() {
   dicViewsNumbers['Registration'] = 1;
 
   const [curView, setCurView] = useState(dicViewsNumbers["LoginPage"]);  // the state to decide which view to present
-  // for testing; should remove or update during development
   const [curUserId, setUserId] = useState(-1);
 
   let view;
