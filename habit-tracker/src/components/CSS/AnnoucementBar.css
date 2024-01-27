@@ -1,0 +1,36 @@
+.announcement-bar {
+  background-color: rgba(113, 232, 113, 0.816);
+  color: rgb(36, 16, 16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.text1 p {
+  margin-right: 2rem;
+}
+
+.text2 p:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.text2 p:last-child {
+  margin-right: 1rem;
+}
+
+.name {
+    color:rgb(170, 66, 198);
+    font-weight: bold;
+}
+
+.badge-categoty{
+    color:brown;
+    font-weight: bold;
+}
