@@ -23,8 +23,7 @@ function TodoList(props) {
       const fetchData = async () => {
       const response = await axios.get(`http://localhost:3000/Habit?userId=${props.userId}`);
       const data = response.data;
-      setHabitsData(data);
-      console.log(habitsData);
+      setHabitsData((prevData) => [...data]);
       }
       fetchData();
     }, [props.userId])
@@ -40,9 +39,10 @@ function TodoList(props) {
             fontSize: '16px', 
             marginLeft: '800px'}
         }>Add a habit</Button>
-        <Grid container xs={12} style={{ display: 'flex', flexDirection: 'row', paddingLeft: '0px', height: 'auto', width: '100%' }}>
-            <TodoItem habit = {habit1} />
-            <TodoItem habit = {habit2}/>
+        <Grid container style={{ display: 'flex', flexDirection: 'row', paddingLeft: '0px', height: 'auto', width: '100%' }}>
+            {habitsData.map((habit) => (
+              <TodoItem habit={habit} />
+            ))}
         </Grid>
       </Grid>
     );
