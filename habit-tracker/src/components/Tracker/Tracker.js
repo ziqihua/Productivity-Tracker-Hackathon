@@ -1,6 +1,8 @@
 import "../CSS/Tracker.css";
 import { useState, useEffect } from "react";
 
+const weekdays = ["M", "T", "W", "T", "F", "S", "S"];
+
 const initialHabits = [
   {
     id: 1,
@@ -181,12 +183,16 @@ function Tracker() {
           <div className="frequency">{habit.frequency}</div>
           <div className="days">
             {habit.daysCompleted.map((completed, index) => (
-              <input
-                key={index}
-                type="checkbox"
-                checked={completed}
-                onChange={() => toggleDay(habit.id, index)}
-              />
+              <div key={index} className="day-checkbox">
+                <label>
+                  <span className="weekday">{weekdays[index]}</span>
+                  <input
+                    type="checkbox"
+                    checked={completed}
+                    onChange={() => toggleDay(habit.id, index)}
+                  />
+                </label>
+              </div>
             ))}
           </div>
           <div className="progress">{habit.progress}</div>

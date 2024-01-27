@@ -86,14 +86,68 @@
 }
 
 .filter-container {
+  position: relative;
   display: flex;
   align-items: center;
 }
 
 .filter-container select {
-  margin-right: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  cursor: pointer;
 }
 
-.filter-container button {
-  padding: 5px 10px;
+.filter-container select:focus {
+  border-color: #2d9429;
 }
+
+.filter-container select:hover {
+  border-color: #2d9429;
+}
+
+/* Optionally, style the option elements as well */
+.filter-container option {
+  padding: 8px;
+}
+
+/* You could add some more styling to the button if it's still part of your design */
+.filter-container button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2d9429;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-container button:hover {
+  background-color: #2d9429;
+}
+
+.filter-container button:focus {
+  box-shadow: 0 0 0 3px #2d9429;
+}
+
+/* Tracker.css */
+
+.day-checkbox {
+  display: inline-block;
+  margin-right: 10px; 
+  text-align: center;
+}
+
+.weekday {
+  display: block; /* Make the day label appear above the checkbox */
+  margin-bottom: 5px; 
+  font-size: 12px; 
+  color: #666; 
+}
+
