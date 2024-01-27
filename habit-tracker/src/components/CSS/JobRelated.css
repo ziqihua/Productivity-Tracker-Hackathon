@@ -31,6 +31,18 @@
 }
 
 .job-category-buttons button.other-button {
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(31, 158, 31, 0.816);
+}
+
+.job-category-buttons button.selected-category {
   background-color: rgba(113, 232, 113, 0.816);
+  color: white;
 }

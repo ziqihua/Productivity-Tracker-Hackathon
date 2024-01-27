@@ -1,19 +1,33 @@
 import "../CSS/HabitCategory.css";
+import { useState } from "react";
 
 const categories = [
-  "Job-related", 
-  "Health", 
-  "Education", 
-  "Social", 
-  "Hobby",  
+  "Job-related",
+  "Health",
+  "Education",
+  "Social",
+  "Hobby",
   "Reflect",
   "Confirm",
 ];
 
 function HabitCategory() {
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
   const handleCategoryClick = (category) => {
-    // Handle the category selection here
-    console.log(`You clicked the ${category} category`);
+    if (category === "Confirm") {
+      // Handle the confirm action here
+      console.log("Go to next view");
+    } else {
+      setSelectedCategories((prev) => {
+        if (prev.includes(category)) {
+          return prev.filter((cat) => cat !== category);
+        } else {
+          return [...prev, category];
+        }
+      });
+      console.log(`You clicked the ${category} category`);
+    }
   };
 
   return (
@@ -24,7 +38,13 @@ function HabitCategory() {
           <button
             key={category}
             onClick={() => handleCategoryClick(category)}
-            className={category === "Confirm" ? "other-button" : ""}
+            className={
+              category === "Confirm"
+                ? "other-button"
+                : selectedCategories.includes(category)
+                ? "selected-category"
+                : ""
+            }
           >
             {category}
           </button>
