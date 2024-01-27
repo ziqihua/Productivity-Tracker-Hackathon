@@ -23,7 +23,6 @@ function SidebarPanel(props) {
         props.updateCurView(4);
     }
 
-
     return (
         <div id="sidebar-panel" style={({ height: "100vh" }, { display: "flex" })}>
         <Sidebar style={{ height: "1000px" }}>
@@ -34,10 +33,10 @@ function SidebarPanel(props) {
                 <h1>Habit Tracker</h1>
             </MenuItem>
 
-            <MenuItem icon={<FactCheckIcon color="success" />} style={{ fontSize: '18px' }} >To-Do</MenuItem>
-            <MenuItem icon={<EditCalendarIcon color="success"/>} style={{ fontSize: '18px' }}>Tracker</MenuItem>
-            <MenuItem icon={<EmojiEventsIcon color="success"/>} style={{ fontSize: '18px' }}>Badges</MenuItem>
-            <MenuItem icon={<PeopleAltIcon color="success"/>} style={{ fontSize: '18px' }}>Community</MenuItem>
+            <MenuItem onClick = {handleToDo} icon={<FactCheckIcon color="success" />} style={{ fontSize: '18px' }} >To-Do</MenuItem>
+            <MenuItem onClick = {handleTracker} icon={<EditCalendarIcon color="success"/>} style={{ fontSize: '18px' }}>Tracker</MenuItem>
+            <MenuItem onClick = {handleBadges} icon={<EmojiEventsIcon color="success"/>} style={{ fontSize: '18px' }}>Badges</MenuItem>
+            <MenuItem onClick = {handleLogout} icon={<PeopleAltIcon color="success"/>} style={{ fontSize: '18px' }}>Community</MenuItem>
             <MenuItem onClick = {handleLogout} icon={<MeetingRoomIcon color="success"/>} style={{ fontSize: '18px' }}>Sign out</MenuItem>
             </Menu>
         </Sidebar>

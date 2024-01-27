@@ -13,6 +13,7 @@ import FormDialog from './components/ActivityFeed/FormDialog';
 import ActivityFeed from './components/ActivityFeed/ActivityFeed';
 import Tracker from './components/Tracker/Tracker';
 import Badges from './components/Badges/Badges';
+import { Sidebar } from 'react-pro-sidebar';
 
 function App() {
 

@@ -31,7 +31,6 @@ export default function RegistrationForm({updateCurView, updateUserId}){
         updateCurView(0); // redirect to select hobby
     }
     
-    
     return (
         <Box component="form"  sx={{ mt: 1 }} onSubmit = {handleSubmit}>
         <TextField
