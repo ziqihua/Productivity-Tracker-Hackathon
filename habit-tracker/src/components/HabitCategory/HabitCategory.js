@@ -11,13 +11,12 @@ const categories = [
   "Confirm",
 ];
 
-function HabitCategory() {
+function HabitCategory({updateCurView}) {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const handleCategoryClick = (category) => {
     if (category === "Confirm") {
-      // Handle the confirm action here
-      console.log("Go to next view");
+        updateCurView(7); 
     } else {
       setSelectedCategories((prev) => {
         if (prev.includes(category)) {

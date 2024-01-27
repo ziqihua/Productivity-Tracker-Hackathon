@@ -23,8 +23,12 @@ function App() {
   dicViewsNumbers['TodoList'] = 2;
   dicViewsNumbers['Tracker'] = 3;
   dicViewsNumbers['Badges'] = 4;
+  dicViewsNumbers['LandingPage'] = 5;
+  dicViewsNumbers['HabitCategory'] = 6;
+  dicViewsNumbers['JobCategory'] = 7;
+  dicViewsNumbers['TaskRecommendation'] = 8;
 
-  const [curView, setCurView] = useState(dicViewsNumbers["Tracker"]);  // the state to decide which view to present
+  const [curView, setCurView] = useState(dicViewsNumbers["LandingPage"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
 
   let view;
@@ -39,6 +43,14 @@ function App() {
     view = <Tracker updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
   } else if (curView === dicViewsNumbers['Badges']) {
     view = <Badges updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
+  } else if (curView === dicViewsNumbers['LandingPage']) {
+    view = <LandingPage updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
+  } else if (curView === dicViewsNumbers['HabitCategory']) {
+    view = <HabitCategory updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
+  } else if (curView === dicViewsNumbers['JobCategory']) {
+    view = <JobCategory updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
+  } else if (curView === dicViewsNumbers['TaskRecommendation']) {
+    view = <TaskRecommendation updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
   }
 
   return (

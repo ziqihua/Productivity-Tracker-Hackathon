@@ -11,14 +11,14 @@ const taskRecommendations = [
   "Confirm",
 ];
 
-function TaskRecommendation() {
+function TaskRecommendation({ updateCurView }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [customHabit, setCustomHabit] = useState("");
   const [taskFrequencies, setTaskFrequencies] = useState({});
 
   const handleTaskClick = (task) => {
     if (task === "Confirm") {
-      console.log("Go to next view");
+      updateCurView(3);
     } else {
       toggleTask(task);
     }

@@ -1,13 +1,13 @@
 import "../CSS/LandingPage.css";
 
-function LandingPage() {
+function LandingPage({updateCurView}) {
   const userName = "Nollie Chen"; // Replace with dynamic data as needed
   const appName = "OvernightSensations"; // Replace with dynamic data as needed
 
-  const handleGetStartedClick = () => {
-    // Logic to handle the get started button click
-    console.log("Get Started clicked");
-  };
+  const handleGetStartedClick = async (e) => {
+    e.preventDefault();
+    updateCurView(6); 
+  }
 
   return (
     <div className="landing-container">
