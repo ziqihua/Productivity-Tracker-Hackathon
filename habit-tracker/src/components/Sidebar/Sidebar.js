@@ -23,6 +23,10 @@ function SidebarPanel(props) {
         props.updateCurView(4);
     }
 
+    const handleCommunity = (e) => {
+        props.updateCurView(9);
+    }
+
     return (
         <div id="sidebar-panel" style={({ height: "100vh" }, { display: "flex" })}>
         <Sidebar style={{ height: "1000px" }}>
@@ -36,7 +40,7 @@ function SidebarPanel(props) {
             <MenuItem onClick = {handleToDo} icon={<FactCheckIcon color="success" />} style={{ fontSize: '18px' }} >To-Do</MenuItem>
             <MenuItem onClick = {handleTracker} icon={<EditCalendarIcon color="success"/>} style={{ fontSize: '18px' }}>Tracker</MenuItem>
             <MenuItem onClick = {handleBadges} icon={<EmojiEventsIcon color="success"/>} style={{ fontSize: '18px' }}>Badges</MenuItem>
-            <MenuItem onClick = {handleLogout} icon={<PeopleAltIcon color="success"/>} style={{ fontSize: '18px' }}>Community</MenuItem>
+            <MenuItem onClick = {handleCommunity} icon={<PeopleAltIcon color="success"/>} style={{ fontSize: '18px' }}>Community</MenuItem>
             <MenuItem onClick = {handleLogout} icon={<MeetingRoomIcon color="success"/>} style={{ fontSize: '18px' }}>Sign out</MenuItem>
             </Menu>
         </Sidebar>

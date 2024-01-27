@@ -14,6 +14,7 @@ import ActivityFeed from './components/ActivityFeed/ActivityFeed';
 import Tracker from './components/Tracker/Tracker';
 import Badges from './components/Badges/Badges';
 import { Sidebar } from 'react-pro-sidebar';
+import CommunityBoard from './components/Community/CommunityBoard';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
   dicViewsNumbers['HabitCategory'] = 6;
   dicViewsNumbers['JobCategory'] = 7;
   dicViewsNumbers['TaskRecommendation'] = 8;
+  dicViewsNumbers['CommunityBoard'] = 9;
 
   const [curView, setCurView] = useState(dicViewsNumbers["LandingPage"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
@@ -51,6 +53,8 @@ function App() {
     view = <JobCategory updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
   } else if (curView === dicViewsNumbers['TaskRecommendation']) {
     view = <TaskRecommendation updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
+  } else if (curView === dicViewsNumbers['CommunityBoard']) {
+    view = <CommunityBoard updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
   }
 
   return (
