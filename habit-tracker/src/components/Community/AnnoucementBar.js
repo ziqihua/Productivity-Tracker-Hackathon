@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee";
 
 function AnnouncementBar() {
     const announcements = [
-        { name: "austin", badge: "job hunting", duration: "3 weeks" },
-        { name: "grace", badge: "health", duration: "1 week" },
+        { name: "Austin", badge: "job hunting", duration: "3 weeks" },
+        { name: "Grace", badge: "health", duration: "1 week" },
         // Add more announcements here
       ];
 
@@ -16,7 +16,7 @@ function AnnouncementBar() {
             <p>
               🎉 <span className="name">{announcement.name}</span> just earned the{" "}
               <span className="badge-category">{announcement.badge}</span> badge by being
-              consistent for {announcement.duration} 🎉
+              consistent for <span className="duration">{announcement.duration}</span> 🎉
             </p>
           </div>
         ))}

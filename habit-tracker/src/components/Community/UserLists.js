@@ -4,20 +4,20 @@ import { useState } from "react";
 const users = [
   {
     id: 1,
-    userName: "grace",
+    userName: "Grace",
     image: require("../../pics/image1.png"),
     communities: ["Health"],
   },
   {
     id: 2,
-    userName: "austin",
-    image: require("../../pics/image2.png"),
+    userName: "Austin",
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542465.png",
     communities: ["Health", "Job-related"],
   },
   {
     id: 3,
-    userName: "coolman",
-    image: require("../../pics/image3.png"),
+    userName: "Nollie",
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542450.png",
     communities: ["Job-related"],
   },
   // Add more user objects as needed

@@ -3,7 +3,7 @@ import "../CSS/Badges.css"; // Import your CSS stylesheet
 function Badges() {
   return (
     <div className="badges">
-      <h1>Badges Achievements</h1>
+      <h2>Badges Achievements</h2>
     </div>
   );
 }
