@@ -2,7 +2,7 @@
 import './App.css';
 import LoginPage from './components/LoginPage/LoginPage';
 import Registration from './components/Registration/Registration';
-import {React, useState} from 'react';
+import {useState} from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import HabitCategory from './components/HabitCategory/HabitCategory';
 import JobCategory from './components/HabitCategory/JobRelated';

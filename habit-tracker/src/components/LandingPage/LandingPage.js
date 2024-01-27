@@ -1,8 +1,8 @@
 import "../CSS/LandingPage.css";
 
 function LandingPage({updateCurView}) {
-  const userName = "Nollie Chen"; // Replace with dynamic data as needed
-  const appName = "OvernightSensations"; // Replace with dynamic data as needed
+  const userName = "Nollie"; 
+  const appName = "OvernightSensations"; 
 
   const handleGetStartedClick = async (e) => {
     e.preventDefault();
@@ -11,8 +11,7 @@ function LandingPage({updateCurView}) {
 
   return (
     <div className="landing-container">
-      <h1>Welcome, Future Sensation!</h1>
-      <p>Hello, {userName}</p>
+      <h1>Welcome, Future Sensation, {userName}</h1>
       <p>
         Dive into <span className="app-name">{appName}</span>,{" "}
       </p>
