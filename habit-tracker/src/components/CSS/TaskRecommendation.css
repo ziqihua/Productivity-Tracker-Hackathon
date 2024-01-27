@@ -49,8 +49,38 @@
 
 }
 
+.custom-habit-input {
+  background-color: #f5f5f5; 
+  border: 1px solid #dcdcdc;
+  border-radius: 15px; 
+  padding: 4px 8px;
+  font-size: 1.1rem; 
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  outline: none; 
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 1rem; 
+}
+
+.custom-habit-input::placeholder {
+  color: #a9a9a9; 
+}
+
+.custom-habit-input:focus {
+  border-color: #b0c4de; 
+  box-shadow: 0 0 0 3px rgba(176, 196, 222, 0.5); 
+}
+
 .frequency-cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 20px;
+}
+
+.frequency-card {
+  margin-bottom: 20px; 
+}
+
+.frequency-card:last-child {
+  margin-bottom: 0; 
 }

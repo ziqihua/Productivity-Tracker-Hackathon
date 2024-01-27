@@ -19,23 +19,6 @@ function TaskRecommendation() {
   const handleTaskClick = (task) => {
     if (task === "Confirm") {
       console.log("Go to next view");
-    } else if (task === "Build my Own Habit") {
-      if (
-        selectedCategories.includes(customHabit) ||
-        (customHabit === "" && selectedCategories.includes(task))
-      ) {
-        setSelectedCategories((prev) =>
-          prev.filter((cat) => cat !== customHabit && cat !== task)
-        );
-        const updatedFrequencies = { ...taskFrequencies };
-        delete updatedFrequencies[customHabit || task];
-        setTaskFrequencies(updatedFrequencies);
-      } else {
-        setSelectedCategories((prev) => [...prev, customHabit || task]);
-        if (!taskFrequencies[customHabit || task]) {
-          setTaskFrequencies((prev) => ({ ...prev, [customHabit || task]: 3 }));
-        }
-      }
     } else {
       toggleTask(task);
     }
@@ -43,25 +26,29 @@ function TaskRecommendation() {
 
   const toggleTask = (task) => {
     setSelectedCategories((prev) => {
-      if (prev.includes(task)) {
+      const isCurrentlySelected = prev.includes(task);
+
+      if (isCurrentlySelected) {
+        // If the task is currently selected, remove it and its frequency
         const updatedFrequencies = { ...taskFrequencies };
-        delete updatedFrequencies[task];
-        setTaskFrequencies(updatedFrequencies);
-        return prev.filter((cat) => cat !== task);
-      } else {
         if (task === "Build my Own Habit" && customHabit) {
-          // Directly add the custom habit name if it's provided
-          return [...prev, customHabit];
+          delete updatedFrequencies[customHabit];
+        } else {
+          delete updatedFrequencies[task];
         }
+        setTaskFrequencies(updatedFrequencies);
+        return prev.filter((cat) => cat !== task && cat !== customHabit);
+      } else {
+        // If the task is being added, ensure the frequency is set to 3
+        const updatedFrequencies = {
+          ...taskFrequencies,
+          [task === "Build my Own Habit" ? customHabit : task]:
+            taskFrequencies[task] || 3,
+        };
+        setTaskFrequencies(updatedFrequencies);
         return [...prev, task];
       }
     });
-    if (task !== "Build my Own Habit" || customHabit) {
-      setTaskFrequencies((prev) => ({
-        ...prev,
-        [task === "Build my Own Habit" ? customHabit : task]: prev[task] || 3,
-      }));
-    }
   };
 
   const handleFrequencyChange = (task, event) => {
@@ -78,12 +65,10 @@ function TaskRecommendation() {
     if (value && !selectedCategories.includes("Build my Own Habit")) {
       setSelectedCategories((prev) => [...prev, "Build my Own Habit"]);
     }
-    if (value) {
-      setTaskFrequencies((prev) => ({
-        ...prev,
-        [value]: prev[customHabit] || 3,
-      }));
-    }
+    setTaskFrequencies((prev) => ({
+      ...prev,
+      [value]: prev[customHabit] || 3,
+    }));
   };
 
   return (
