@@ -6,16 +6,6 @@ import Button from '@mui/material/Button';
 import {useState, useEffect} from 'react';
 
 function TodoList(props) {
-    const habit1 = {
-        title: "Read a book",
-        description: "Read a book for 30 minutes",
-        category: "Education"
-    }
-    const habit2 = {
-        title: "Work out",
-        description: "Work out for 30 minutes",
-        category: "Health"
-    }
     
     const [habitsData, setHabitsData] = useState([]);
 
@@ -38,7 +28,9 @@ function TodoList(props) {
             height: '30px', 
             fontSize: '16px', 
             marginLeft: '800px'}
-        }>Add a habit</Button>
+          }
+          onClick = {() => props.updateCurView(6)}
+        >Add a habit</Button>
         <Grid container style={{ display: 'flex', flexDirection: 'row', paddingLeft: '0px', height: 'auto', width: '100%' }}>
             {habitsData.map((habit) => (
               <TodoItem habit={habit} />

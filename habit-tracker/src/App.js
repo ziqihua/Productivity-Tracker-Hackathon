@@ -30,7 +30,7 @@ function App() {
   dicViewsNumbers['TaskRecommendation'] = 8;
   dicViewsNumbers['CommunityBoard'] = 9;
 
-  const [curView, setCurView] = useState(dicViewsNumbers["LandingPage"]);  // the state to decide which view to present
+  const [curView, setCurView] = useState(dicViewsNumbers["Registration"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
 
   let view;
@@ -57,12 +57,14 @@ function App() {
     view = <CommunityBoard updateCurView={setCurView} userId={curUserId} updateUserId = {setUserId} />;
   }
 
+  const noSideBar = new Set([0, 1, 5, 6, 7, 8]);
+
   return (
     // <>
     //    <FormDialog />
     // </>
     <div>
-      {curView < 2 ? (
+      {noSideBar.has(curView)? (
         <>
           {view}
         </>
