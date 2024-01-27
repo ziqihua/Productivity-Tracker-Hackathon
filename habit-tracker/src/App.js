@@ -11,7 +11,8 @@ import SidebarPanel from './components/Sidebar/Sidebar';
 import TodoList from './components/Todo/TodoList';
 import FormDialog from './components/ActivityFeed/FormDialog';
 import ActivityFeed from './components/ActivityFeed/ActivityFeed';
-
+import Tracker from './components/Tracker/Tracker';
+import Badges from './components/Badges/Badges';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
   dicViewsNumbers['Registration'] = 1;
   dicViewsNumbers['TodoList'] = 2;
 
-  const [curView, setCurView] = useState(dicViewsNumbers["LoginPage"]);  // the state to decide which view to present
+  const [curView, setCurView] = useState(dicViewsNumbers["Tracker"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
 
   let view;
@@ -31,11 +32,15 @@ function App() {
     view = <Registration updateCurView = {setCurView} updateUserId = {setUserId} />
   } else if (curView === dicViewsNumbers['TodoList']) {
     view = <TodoList updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
-  } 
+  } else if (curView === dicViewsNumbers['Tracker']) {
+    view = <Tracker updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
+  } else if (curView === dicViewsNumbers['Badges']) {
+    view = <Tracker updateCurView = {setCurView} userId = {curUserId} updateUserId = {setUserId} />
+  }
 
   return (
     // <>
-    //   <ActivityFeed />
+    //    <FormDialog />
     // </>
     <div>
       {curView < 2 ? (
