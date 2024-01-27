@@ -40,8 +40,8 @@
     {
       "id": "2",
       "userId": "e091",
-      "category": "Everyday Study",
-      "title": "Daily Study",
+      "category": "Education",
+      "title": "Everyday Study",
       "frequencyt": 7,
       "progress": 2,
       "mark": [
@@ -49,6 +49,20 @@
         2
       ],
       "description": "Study for 2 hours every day",
+      "complete": false
+    },
+    {
+      "id": "3",
+      "userId": "e091",
+      "category": "Reflect",
+      "title": "Meditation",
+      "frequencyt": 7,
+      "progress": 2,
+      "mark": [
+        1,
+        2
+      ],
+      "description": "30 minutes per day",
       "complete": false
     }
   ],
