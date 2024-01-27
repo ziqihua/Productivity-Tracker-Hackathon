@@ -1,0 +1,79 @@
+.habit-tracker {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.habit {
+  display: grid;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  grid-template-columns: 30px 2fr 1fr 3fr 1fr;
+  align-items: center;
+  gap: 10px;
+  cursor: grab;
+}
+
+.frequency,
+.progress {
+  text-align: center;
+}
+
+.days button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.days button.active {
+  background-color: #4caf50;
+}
+
+.filter-category {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.days input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #e0e0e0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #bfbfbf;
+}
+
+.days input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23ffffff"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 011.414 1.414l-9 9a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586l8.293-8.293z" clip-rule="evenodd" /></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-color: #4caf50;
+}
+
+.drag-handle {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H4v2h16V9zm0 4H4v2h16v-2z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: grab;
+  height: 20px; /* Adjust the size as needed */
+  margin-right: 10px;
+}
