@@ -21,7 +21,7 @@ const initialHabits = [
     title: "Build portfolio",
     frequency: "4 days/week",
     daysCompleted: [true, false, true, false, true, false, true],
-    progress: "4/7",
+    progress: "4/4",
   },
   {
     id: 4,
@@ -43,7 +43,19 @@ function Tracker() {
         if (habit.id === habitId) {
           const updatedDays = [...habit.daysCompleted];
           updatedDays[dayIndex] = !updatedDays[dayIndex];
-          return { ...habit, daysCompleted: updatedDays };
+          const progressFraction = calculateProgressFraction(
+            updatedDays,
+            habit.frequency
+          );
+          const newProgressString = `${updatedDays.filter(Boolean).length}/${
+            habit.frequency.split(" ")[0]
+          }`;
+          return {
+            ...habit,
+            daysCompleted: updatedDays,
+            progress: newProgressString,
+            isComplete: progressFraction === 1,
+          };
         }
         return habit;
       })
@@ -80,17 +92,35 @@ function Tracker() {
     event.preventDefault(); // Necessary to allow dropping
   };
 
+  const calculateProgressFraction = (daysCompleted, frequency) => {
+    const completed = daysCompleted.filter(Boolean).length; // Count the true values
+    const frequencyNumber = parseInt(frequency.split(" ")[0], 10); // Extract the number from the frequency string
+    return completed / frequencyNumber;
+  };
+
+  const sortedHabits = habits
+    .map(habit => ({
+      ...habit,
+      progressFraction: calculateProgressFraction(habit.daysCompleted, habit.frequency),
+      isComplete: calculateProgressFraction(habit.daysCompleted, habit.frequency) === 1,
+    }))
+    .sort((a, b) => {
+      if (a.isComplete) return 1; // Move completed habits to the end
+      if (b.isComplete) return -1; // Keep uncompleted habits at the beginning
+      return 0; // Keep original order among uncompleted habits
+    });
+
   return (
     <div className="habit-tracker">
       <div className="header">
         <h2>My Habit Tracker</h2>
         <button className="filter-category">Filter category</button>
       </div>
-      {habits.map((habit) => (
+      {sortedHabits.map((habit) => (
         <div
           key={habit.id}
-          className="habit"
-          draggable
+          className={`habit ${habit.isComplete ? "complete" : ""}`}
+          draggable={!habit.isComplete}
           onDragStart={(event) => onDragStart(event, habit.id)}
           onDragEnd={onDragEnd}
           onDrop={(event) => onDrop(event, habit.id)}

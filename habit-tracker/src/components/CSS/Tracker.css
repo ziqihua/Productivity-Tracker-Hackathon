@@ -23,7 +23,7 @@
   gap: 10px;
   cursor: grab;
 }
-
+  
 .frequency,
 .progress {
   text-align: center;
@@ -74,6 +74,13 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: grab;
-  height: 20px; /* Adjust the size as needed */
+  height: 20px;
   margin-right: 10px;
+}
+
+.habit.complete {
+    /* Style for completed habits */
+    opacity: 0.9; 
+    cursor: default; 
+    background-color: rgba(113, 232, 113, 0.816);
 }
