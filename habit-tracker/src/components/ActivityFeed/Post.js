@@ -14,14 +14,14 @@ export default function Post(props) {
         <Grid container spacing={2} alignItems="center">
           {/* Left Part: Icon */}
           <Grid item style={{ width: '15%', height: '25%', margin: '10px' }} >
-            <Avatar style={{ width: '50%', height: '50%', margin: '10px', border: '4px solid #DBEBE3', padding: '15px' }} alt="Remy Sharp" src= {props.profilePic} /> 
+            <Avatar style={{ width: '50%', height: '50%', margin: '10px', border: '4px solid #456253', padding: '15px' }} alt="Remy Sharp" src= {props.profilePic} /> 
           </Grid>
           {/* Center Part: Wording */}
           <Grid item xs={8} style={{ marginLeft: '10px' }} alignItems="flex-start">
             <Typography variant="h5" component="div">
               {props.name}
             </Typography>
-            <Typography variant="body2" color="text.secondary" style={{ marginTop: '10px' , fontSize: "12px" , color: '#DBEBE3', fontWeight: 'bold' }}>
+            <Typography variant="body2" color="text.secondary" style={{ marginTop: '10px' , fontSize: "12px" , color: '#456253', fontWeight: 'bold' }}>
               {achievementStr}
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ marginTop: '10px' }}>
