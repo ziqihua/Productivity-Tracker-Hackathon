@@ -11,21 +11,22 @@ function LandingPage() {
 
   return (
     <div className="landing-container">
-      <h1>Landing page for new user</h1>
+      <h1>Welcome, Future Sensation!</h1>
       <p>Hello, {userName}</p>
       <p>
-        Welcome to {appName}, a web app that aims to help you achieve ANY goals!
+        Dive into <span className="app-name">{appName}</span>,{" "}
       </p>
       <p>
-        Please kindly fill out the following survey so that we can match you to
-        the corresponding theme.{" "}
+        the magical realm where your aspirations transform into dazzling
+        realities overnight!
       </p>
+      <p>Take a moment to waltz through our quirky survey.</p>
       <p>
-        For example, if you would like to establish your niche in CS, you can
-        choose job-related category.
+        It's the secret sauce to seasoning your experience with the right flavor
+        of fabulous.
       </p>
       <button className="get-started-btn" onClick={handleGetStartedClick}>
-        GET STARTED
+        Get Started
       </button>
     </div>
   );
