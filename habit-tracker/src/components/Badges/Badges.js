@@ -13,7 +13,7 @@ const categories = [
   { id: 6, name: "reflect" },
 ];
 
-function HabitCategories() {
+function BadgesCategories() {
   const badgeLabels = ["1W", "3W", "5W", "10W", "15W"];
 
   return (
@@ -81,4 +81,4 @@ function HabitCategories() {
   );
 }
 
-export default HabitCategories;
+export default BadgesCategories;
