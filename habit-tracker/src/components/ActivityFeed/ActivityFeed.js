@@ -21,19 +21,19 @@ function ActivityFeed({ filter }) {
         }}
       >
         <Post
-          name="Austin"
-          text="Keep it up!"
-          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542465.png"
-          achievement="3 weeks staying habitual for job hunting"
+          name="Nollie"
+          text="Working hard"
+          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542437.png"
+          achievement="5 weeks staying habitual for  job-related"
           community="Job-related"
           filter={filter}
         />
         <Post
-          name="Nollie"
-          text="Working hard"
-          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542437.png"
-          achievement="7 weeks staying habitual for education"
-          community="Education"
+          name="Austin"
+          text="Keep it up!"
+          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542465.png"
+          achievement="3 weeks staying habitual for job-related"
+          community="Job-related"
           filter={filter}
         />
         <Post
