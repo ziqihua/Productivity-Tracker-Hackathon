@@ -1,4 +1,7 @@
 import "../CSS/Badges.css"; // Import your CSS stylesheet
+import React from 'react';
+import { Box, Typography, Grid } from '@mui/material';
+import FormDialog from "../ActivityFeed/FormDialog";
 
 // Badge component representing each badge
 const Badge = ({
@@ -10,40 +13,49 @@ const Badge = ({
   image6,
   title,
   description,
+  updateCurView
 }) => {
-
   return (
-    <div className="badge">
-      <p className="badge-title">{title}</p>
-      <img className="image1" src={image1} alt="Badge-icon" />
-      <div className="badge-text-container">
-        <div className="badge-text">
-          <img className="image2" src={image2} alt="Badge-1w" />
-          <span>1W</span>
-        </div>
-        <div className="badge-text">
-          <img className="image3" src={image3} alt="Badge-3w" />
-          <span>3W</span>
-        </div>
-        <div className="badge-text">
-          <img className="image4" src={image4} alt="Badge-5w" />
-          <span>5W</span>
-        </div>
-        <div className="badge-text">
-          <img className="image5" src={image5} alt="Badge-10w" />
-          <span>10W</span>
-        </div>
-        <div className="badge-text">
-          <img className="image6" src={image6} alt="Badge-15w" />
-          <span>15W</span>
-        </div>
-      </div>
-      <p className="badge-description">{description}</p>
-    </div>
+    <Grid container spacing={2} direction="row" alignItems="center" style={{ marginBottom: '10px' }}>
+      <Grid item xs={1}>
+        <Typography variant="h5" className="badge-title" textAlign="center" style={{ fontSize: '15px', fontWeight: 'bold' }}>
+          {title}
+        </Typography>
+      </Grid>
+      <Grid item xs={1}>
+        <img className="image1" src={image1} alt="Badge-icon" style={{ height: '100%', width: '100%' }} />
+      </Grid>
+      <Grid item xs={10} container alignItems="center">
+        <Box className="badge-text-container">
+          <Grid container spacing={2}>
+            {[{ src: image2, alt: 'Badge-1w', text: '1W' },
+              { src: image3, alt: 'Badge-3w', text: '3W' },
+              { src: image4, alt: 'Badge-5w', text: '5W' },
+              { src: image5, alt: 'Badge-10w', text: '10W' },
+              { src: image6, alt: 'Badge-15w', text: '15W' }].map((item, index) => (
+                <Grid item key={index} xs={1.2}>
+                  <Box className="badge-text">
+                    <img src={item.src} alt={item.alt} className={`image${index + 2}`} style={{ height: '100%', width: '100%' }} />
+                    <span>{item.text}</span>
+                  </Box>
+                </Grid>
+              ))}
+            <Grid item xs={3}>
+              <Typography variant="body2" className="badge-description" style={{display: 'flex', alignItems: 'center', height: '100%', whiteSpace: 'normal' }}>
+                {description}
+              </Typography>
+            </Grid>
+            <Grid item xs={3} style={{display: 'flex', alignItems: 'center'}}>
+              <FormDialog updateCurView = {updateCurView}/>
+            </Grid>
+          </Grid>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
-function Badges() {
+function Badges(props) {
   const badgeData = [
     {
       image1: require("../../pics/job_hunting_pic.png"),
@@ -132,6 +144,7 @@ function Badges() {
           image5={badge.image5}
           image6={badge.image6}
           description={badge.description}
+          updateCurView = {props.updateCurView}
         />
       ))}
     </div>

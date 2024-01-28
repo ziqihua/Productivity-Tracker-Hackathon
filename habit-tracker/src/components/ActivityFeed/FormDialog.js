@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function FormDialog() {
+export default function FormDialog(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -16,6 +16,11 @@ export default function FormDialog() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleShare = () => {
+    setOpen(false);
+    props.updateCurView(9);
   };
 
   return (
@@ -40,10 +45,10 @@ export default function FormDialog() {
         maxWidth="md"
         fullWidth
       >
-        <DialogTitle style={{ color: "#00e676" , fontWeight: 'bold', fontSize: '40px'}}>Achievement Title</DialogTitle>
+        <DialogTitle style={{ color: "#00e676" , fontWeight: 'bold', fontSize: '40px'}}>Job-related</DialogTitle>
         <DialogContent>
           <DialogContentText style={{ marginBottom: '10px' ,color: "gray", fontSize: '15px'}}>
-            4 weeks staying healthy
+            6 weeks staying habitual for job-related
           </DialogContentText>
           <TextField
             autoFocus
@@ -60,7 +65,7 @@ export default function FormDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} style={{ color: "#00e676" , fontWeight: 'bold', fontSize: '15px'}} >Cancel</Button>
-          <Button type="submit" style={{ color: "#00e676" , fontWeight: 'bold', fontSize: '15px'}}>SHARE</Button>
+          <Button onClick={handleShare} type="submit" style={{ color: "#00e676" , fontWeight: 'bold', fontSize: '15px'}}>SHARE</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>
