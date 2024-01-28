@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar';
 export default function Post(props) {
   const achievementStr = 'Has shared an achievement: ' + props.achievement
 
+  if (!props.filter || props.filter === props.community) {
   return (
     <Card style={{ height: '150px', width: '70%', padding: '0', marginTop: '10px'}}>
       <CardContent >
@@ -31,5 +32,7 @@ export default function Post(props) {
           </Grid>
       </CardContent>
     </Card>
-  );
+  );} else {
+    return null;
+  }
 }

@@ -18,16 +18,24 @@ const users = [
     id: 3,
     userName: "Nollie",
     image: "https://cdn-icons-png.flaticon.com/512/13542/13542450.png",
-    communities: ["Job-related"],
+    communities: ["Job-related", "Education"],
   },
+  {
+    id: 4, 
+    userName: "Amy",
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542450.png",
+    communities: ["Job-related", "Education"]
+  }
   // Add more user objects as needed
 ];
 
-function UserLists() {
+function UserLists(props) {
   const [selectedCommunity, setSelectedCommunity] = useState("");
 
   const handleCommunityChange = (event) => {
+    const newFilter = event.target.value;
     setSelectedCommunity(event.target.value);
+    props.onFilterChange(newFilter);
   };
 
   const filteredUsers = selectedCommunity
@@ -41,6 +49,7 @@ function UserLists() {
           <option value="">All Communities</option>
           <option value="Health">Health</option>
           <option value="Job-related">Job-related</option>
+          <option value="Education">Education</option>
         </select>
       </div>
       <ul>

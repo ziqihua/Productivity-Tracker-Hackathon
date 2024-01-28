@@ -1,9 +1,16 @@
 import "../CSS/CommunityBoard.css";
+import{ useState } from "react";
 import ActivityFeed from "../ActivityFeed/ActivityFeed";
 import AnnoucementBar from "./AnnoucementBar";
 import UserLists from "./UserLists";
 
 function CommunityBoard() {
+  const [filter, setFilter] = useState('');
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
   return (
     <div className="community-board-container">
       <h2>Community</h2>
@@ -12,10 +19,10 @@ function CommunityBoard() {
       </div>
       <div className="bottom-section">
         <div className="activity-feed">
-          <ActivityFeed />
+          <ActivityFeed filter={filter} />
         </div>
         <div className="user-lists">
-          <UserLists />
+        <UserLists filter={filter} onFilterChange={handleFilterChange} />
         </div>
       </div>
     </div>
