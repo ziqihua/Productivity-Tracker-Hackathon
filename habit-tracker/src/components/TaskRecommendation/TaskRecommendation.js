@@ -19,7 +19,7 @@ function TaskRecommendation({ updateCurView }) {
   const handleTaskClick = (task) => {
     if (task === "Confirm") {
       if (selectedCategories.length > 0) {
-        updateCurView(3);
+        updateCurView(2);
       }
     } else {
       toggleTask(task);

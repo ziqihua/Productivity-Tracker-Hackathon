@@ -23,9 +23,9 @@
       "photo": "https://cdn-icons-png.flaticon.com/512/13542/13542444.png"
     },
     {
-      "id": "badd",
-      "userName": "123",
-      "userEmail": "123",
+      "id": "6c7e",
+      "userName": "Nollie",
+      "userEmail": "nollie@gmail.com",
       "userPassword": "123",
       "community": "",
       "photo": "https://cdn-icons-png.flaticon.com/512/13542/13542437.png"
@@ -34,45 +34,70 @@
   "Habit": [
     {
       "id": "1",
-      "userId": "e091",
+      "userId": "6c7e",
       "category": "Job-related",
       "title": "Leetcode",
-      "frequencyt": 3,
-      "progress": 1,
+      "frequencyt": 7,
+      "progress": 3,
       "mark": [
-        2
+        1, 3, 4
       ],
-      "description": "Write two leetcode medium questions every day",
       "complete": false
     },
     {
       "id": "2",
-      "userId": "e091",
-      "category": "Education",
-      "title": "Everyday Study",
-      "frequencyt": 7,
+      "userId": "6c7e",
+      "category": "Job-related",
+      "title": "Find an internship",
+      "frequencyt": 5,
       "progress": 2,
       "mark": [
         1,
-        2
+        2,
+        3
       ],
-      "description": "Study for 2 hours every day",
       "complete": false
     },
     {
       "id": "3",
-      "userId": "e091",
-      "category": "Reflect",
-      "title": "Meditation",
-      "frequencyt": 7,
+      "userId": "6c7e",
+      "category": "Health",
+      "title": "Hit the gym",
+      "frequencyt": 3,
+      "progress": 2,
+      "mark": [
+        1,
+        6
+      ],
+      "complete": false
+    },
+    {
+      "id": "4",
+      "userId": "6c7e",
+      "category": "Job-related",
+      "title": "Build portfolio",
+      "frequencyt": 4,
       "progress": 2,
       "mark": [
         1,
         2
       ],
-      "description": "30 minutes per day",
+      "complete": false
+    },
+    {
+      "id": "5",
+      "userId": "6c7e",
+      "category": "Job-related",
+      "title": "Work on side project",
+      "frequencyt": 3,
+      "progress": 2,
+      "mark": [
+        1,
+        2
+      ],
       "complete": false
     }
+
   ],
   "Badges": [
     {

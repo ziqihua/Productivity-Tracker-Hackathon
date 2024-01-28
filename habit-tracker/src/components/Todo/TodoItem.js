@@ -36,7 +36,7 @@ export default function TodoItem(props) {
               {props.habit.title}
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ marginTop: '10px' }}>
-              {props.habit.description}
+              {props.habit.category}
             </Typography>
           </Grid>
             <FormControlLabel

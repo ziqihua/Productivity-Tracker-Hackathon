@@ -29,7 +29,7 @@ function SidebarPanel(props) {
 
     return (
         <div id="sidebar-panel" style={({ height: "100vh" }, { display: "flex" })}>
-        <Sidebar style={{ height: "1000px" }}>
+        <Sidebar style={{ height: "1400px" }}>
             <Menu>
             <MenuItem
                 style={{ textAlign: "left", margin: "10px 10px 20px", fontSize: '22px' }}
