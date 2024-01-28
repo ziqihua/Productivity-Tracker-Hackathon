@@ -1,4 +1,3 @@
-import { requirePropFactory } from "@mui/material";
 import "../CSS/Badges.css"; // Import your CSS stylesheet
 
 // Badge component representing each badge
@@ -12,30 +11,33 @@ const Badge = ({
   title,
   description,
 }) => {
+
   return (
     <div className="badge">
-      <p className="badge-title">{title}</p>
+      <div className="badge-title">
+        <p>{title}</p>
+      </div>
       <img className="image1" src={image1} alt="Badge-icon" />
       <div className="badge-text-container">
         <div className="badge-text">
           <img className="image2" src={image2} alt="Badge-1w" />
-          1W
+          <span>1W</span>
         </div>
         <div className="badge-text">
           <img className="image3" src={image3} alt="Badge-3w" />
-          3W
+          <span>3W</span>
         </div>
         <div className="badge-text">
           <img className="image4" src={image4} alt="Badge-5w" />
-          5W
+          <span>5W</span>
         </div>
         <div className="badge-text">
           <img className="image5" src={image5} alt="Badge-10w" />
-          10W
+          <span>10W</span>
         </div>
         <div className="badge-text">
           <img className="image6" src={image6} alt="Badge-15w" />
-          15W
+          <span>15W</span>
         </div>
       </div>
       <p className="badge-description">{description}</p>
@@ -59,59 +61,59 @@ function Badges() {
     // Repeat for each badge...
 
     {
-      image1: require("../../pics/Education pic.png"),
-      image2: require("../../pics/Education finished.png"),
-      image3: require("../../pics/Education finished.png"),
-      image4: require("../../pics/Education finished.png"),
-      image5: require("../../pics/Education undone.png"),
-      image6: require("../../pics/Education undone.png"),
+      image1: require("../../pics/education-icon.png"),
+      image2: require("../../pics/education-badge-done.png"),
+      image3: require("../../pics/education-badge-done.png"),
+      image4: require("../../pics/education-badge-done.png"),
+      image5: require("../../pics/education-badge-undone.png"),
+      image6: require("../../pics/education-badge-undone.png"),
       title: "Education",
       description:
         "7 weeks staying habitual! Great job in keeping yourself from procrastinating.",
     },
 
     {
-      image1: require("../../pics/Health pic.png"),
-      image2: require("../../pics/Health finished.png"),
-      image3: require("../../pics/health undone.png"),
-      image4: require("../../pics/health undone.png"),
-      image5: require("../../pics/health undone.png"),
-      image6: require("../../pics/health undone.png"),
+      image1: require("../../pics/health-icon.png"),
+      image2: require("../../pics/health-badge-done.png"),
+      image3: require("../../pics/health-badge-undone.png"),
+      image4: require("../../pics/health-badge-undone.png"),
+      image5: require("../../pics/health-badge-undone.png"),
+      image6: require("../../pics/health-badge-undone.png"),
       title: "Health",
       description:
         "1 week staying habitual! It’s never late to start nurturing lifelong friendships.",
     },
 
     {
-      image1: require("../../pics/hobby pic.png"),
-      image2: require("../../pics/hobby finished.png"),
-      image3: require("../../pics/hobby finished.png"),
-      image4: require("../../pics/hobbies undone.png"),
-      image5: require("../../pics/hobbies undone.png"),
-      image6: require("../../pics/hobbies undone.png"),
+      image1: require("../../pics/hobby-icon.png"),
+      image2: require("../../pics/hobby-badge-done.png"),
+      image3: require("../../pics/hobby-badge-done.png"),
+      image4: require("../../pics/hobby-badge-undone.png"),
+      image5: require("../../pics/hobby-badge-undone.png"),
+      image6: require("../../pics/hobby-badge-undone.png"),
       title: "Hobby",
       description: "4 weeks staying habitual! Enrich your life everyday.",
     },
 
     {
-      image1: require("../../pics/Socializing pic.png"),
-      image2: require("../../pics/Social undone.png"),
-      image3: require("../../pics/Social undone.png"),
-      image4: require("../../pics/Social undone.png"),
-      image5: require("../../pics/Social undone.png"),
-      image6: require("../../pics/Social undone.png"),
+      image1: require("../../pics/social-icon.png"),
+      image2: require("../../pics/social-badge-done.png"),
+      image3: require("../../pics/social-badge-undone.png"),
+      image4: require("../../pics/social-badge-undone.png"),
+      image5: require("../../pics/social-badge-undone.png"),
+      image6: require("../../pics/social-badge-undone.png"),
       title: "Social",
       description:
         "It’s never late to start nurturing lifelong friendships. Build your social routine today!",
     },
 
     {
-      image1: require("../../pics/Reflection pic.png"),
-      image2: require("../../pics/Reflection undone.png"),
-      image3: require("../../pics/Reflection undone.png"),
-      image4: require("../../pics/Reflection undone.png"),
-      image5: require("../../pics/Reflection undone.png"),
-      image6: require("../../pics/Reflection undone.png"),
+      image1: require("../../pics/reflect-icon.png"),
+      image2: require("../../pics/reflect-badge-undone.png"),
+      image3: require("../../pics/reflect-badge-undone.png"),
+      image4: require("../../pics/reflect-badge-undone.png"),
+      image5: require("../../pics/reflect-badge-undone.png"),
+      image6: require("../../pics/reflect-badge-undone.png"),
       title: "Reflection",
       description:
         "Do you know our daily lives are a reflection of what we believe in? Build your reflection routine today!",
