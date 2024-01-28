@@ -31,7 +31,7 @@ function ActivityFeed({ filter }) {
         <Post
           name="Nollie"
           text="Working hard"
-          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542450.png"
+          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542437.png"
           achievement="7 weeks staying habitual for education"
           community="Education"
           filter={filter}
@@ -39,8 +39,8 @@ function ActivityFeed({ filter }) {
         <Post
           name="Grace"
           text="Drink A LOT OF water"
-          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542465.png"
-          achievement="1 weeks staying habitual for education"
+          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542450.png"
+          achievement="1 weeks staying habitual for health"
           community="Health"
           filter={filter}
         />

@@ -5,7 +5,7 @@ const users = [
   {
     id: 1,
     userName: "Grace",
-    image: "https://cdn-icons-png.flaticon.com/512/13542/13542465.png",
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542450.png",
     communities: ["Health"],
   },
   {
@@ -17,7 +17,7 @@ const users = [
   {
     id: 3,
     userName: "Nollie",
-    image: "https://cdn-icons-png.flaticon.com/512/13542/13542450.png",
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542437.png",
     communities: ["Job-related", "Education"],
   },
   {
