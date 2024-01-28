@@ -5,7 +5,7 @@ const users = [
   {
     id: 1,
     userName: "Grace",
-    image: require("../../pics/image1.png"),
+    image: "https://cdn-icons-png.flaticon.com/512/13542/13542465.png",
     communities: ["Health"],
   },
   {

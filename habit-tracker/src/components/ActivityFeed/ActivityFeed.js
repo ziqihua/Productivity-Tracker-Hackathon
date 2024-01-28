@@ -24,9 +24,9 @@ function ActivityFeed({ filter }) {
           name="Austin"
           text="Keep it up!"
           profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542465.png"
-          achievement="5 weeks staying habitual for job hunting"
+          achievement="3 weeks staying habitual for job hunting"
           community="Job-related"
-          filter ={filter}
+          filter={filter}
         />
         <Post
           name="Nollie"
@@ -34,7 +34,15 @@ function ActivityFeed({ filter }) {
           profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542450.png"
           achievement="7 weeks staying habitual for education"
           community="Education"
-          filter ={filter}
+          filter={filter}
+        />
+        <Post
+          name="Grace"
+          text="Drink A LOT OF water"
+          profilePic="https://cdn-icons-png.flaticon.com/512/13542/13542465.png"
+          achievement="1 weeks staying habitual for education"
+          community="Health"
+          filter={filter}
         />
       </Grid>
     </Grid>

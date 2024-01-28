@@ -3,8 +3,9 @@ import Marquee from "react-fast-marquee";
 
 function AnnouncementBar() {
     const announcements = [
-        { name: "Austin", badge: "job-related", duration: "3 weeks" },
-        { name: "Grace", badge: "health", duration: "1 week" },
+        { name: "Austin", badge: "Job-related", duration: "3 weeks" },
+        { name: "Grace", badge: "Health", duration: "1 week" },
+        { name: "Nollie", badge: "Education", duration: "7 weeks"}
         // Add more announcements here
       ];
 
