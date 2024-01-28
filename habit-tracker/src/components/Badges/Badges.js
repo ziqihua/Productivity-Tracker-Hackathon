@@ -14,9 +14,7 @@ const Badge = ({
 
   return (
     <div className="badge">
-      <div className="badge-title">
-        <p>{title}</p>
-      </div>
+      <p className="badge-title">{title}</p>
       <img className="image1" src={image1} alt="Badge-icon" />
       <div className="badge-text-container">
         <div className="badge-text">
