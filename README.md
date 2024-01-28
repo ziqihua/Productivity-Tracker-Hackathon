@@ -1,3 +1,4 @@
 - Group Name: Overnight Sensations
 - Group Members: Austin Lin, Grace Liu, Nollie Chen 
-- DEMO Link: https://youtu.be/jowEtKxsv24
+- DEMO Link1: https://youtu.be/jowEtKxsv24
+- DEMO Link2: https://drive.google.com/file/d/1S7oWh60dR69XU6Ix95b1G-AFgLnquT4E/view?usp=sharing
