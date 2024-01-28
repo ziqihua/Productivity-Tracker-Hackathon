@@ -30,7 +30,7 @@ function App() {
   dicViewsNumbers['TaskRecommendation'] = 8;
   dicViewsNumbers['CommunityBoard'] = 9;
 
-  const [curView, setCurView] = useState(dicViewsNumbers["Registration"]);  // the state to decide which view to present
+  const [curView, setCurView] = useState(dicViewsNumbers["Badges"]);  // the state to decide which view to present
   const [curUserId, setUserId] = useState(-1);
 
   let view;

@@ -1,0 +1,52 @@
+.badges {
+  font-family: "Arial", sans-serif;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of items */
+  gap: 20px;
+  background: #f9f9f9;
+
+}
+
+.badge {
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex; /* Use flex to better control the inner layout */
+  align-items: center; /* Align items in the center horizontally */
+  max-width: 200px; /* Adjust this to fit your design */
+}
+
+.badge img {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.badge .image1 {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.badge-title {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.badge-description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
