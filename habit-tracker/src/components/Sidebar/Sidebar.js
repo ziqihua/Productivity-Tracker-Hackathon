@@ -4,6 +4,8 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar'
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import { Grid } from "@mui/material";
+import Avatar from '@mui/material/Avatar';
 
 function SidebarPanel(props) {
 
@@ -36,6 +38,10 @@ function SidebarPanel(props) {
             >
                 <h1>Habit Tracker</h1>
             </MenuItem>
+
+            <Grid item style={{ width: '20%', height: '20%', marginLeft: '50px' }} >
+                <Avatar style={{ width: '90%', height: '90%', margin: '10px', border: '4px solid #456253', padding: '15px' }} alt="Remy Sharp" src= "https://cdn-icons-png.flaticon.com/512/13542/13542437.png" /> 
+            </Grid>
 
             <MenuItem onClick = {handleToDo} icon={<FactCheckIcon color="success" />} style={{ fontSize: '18px' }} >To-Do</MenuItem>
             <MenuItem onClick = {handleTracker} icon={<EditCalendarIcon color="success"/>} style={{ fontSize: '18px' }}>Tracker</MenuItem>
