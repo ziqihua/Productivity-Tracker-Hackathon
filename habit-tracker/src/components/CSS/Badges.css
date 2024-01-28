@@ -20,9 +20,9 @@
   padding: 15px;
   text-align: center;
   border-radius: 8px;
-  display: flex; /* Use flex to better control the inner layout */
-  align-items: center; /* Align items in the center horizontally */
-  max-width: 200px; /* Adjust this to fit your design */
+  display: flex;
+  align-items: center; 
+  max-width: 200px;
 }
 
 .badge img {
