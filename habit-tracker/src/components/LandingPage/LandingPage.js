@@ -1,18 +1,17 @@
 import "../CSS/LandingPage.css";
 
-function LandingPage() {
-  const userName = "Nollie Chen"; // Replace with dynamic data as needed
-  const appName = "OvernightSensations"; // Replace with dynamic data as needed
+function LandingPage({updateCurView}) {
+  const userName = "Nollie"; 
+  const appName = "OvernightSensations"; 
 
-  const handleGetStartedClick = () => {
-    // Logic to handle the get started button click
-    console.log("Get Started clicked");
-  };
+  const handleGetStartedClick = async (e) => {
+    e.preventDefault();
+    updateCurView(6); 
+  }
 
   return (
     <div className="landing-container">
-      <h1>Welcome, Future Sensation!</h1>
-      <p>Hello, {userName}</p>
+      <h1>Welcome, Future Sensation, {userName}</h1>
       <p>
         Dive into <span className="app-name">{appName}</span>,{" "}
       </p>

@@ -28,7 +28,7 @@ export default function RegistrationForm({updateCurView, updateUserId}){
 
         let matchingUser = await createUser(newUser) // get userId from database
         updateUserId(matchingUser);
-        updateCurView(0); // redirect to select hobby
+        updateCurView(5); // redirect to select hobby
     }
     
     return (

@@ -11,22 +11,16 @@ const categories = [
   "Confirm",
 ];
 
-function HabitCategory() {
-  const [selectedCategories, setSelectedCategories] = useState([]);
+function HabitCategory({updateCurView}) {
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (category) => {
     if (category === "Confirm") {
-      // Handle the confirm action here
-      console.log("Go to next view");
+      if (selectedCategory) {
+        updateCurView(7); 
+      }
     } else {
-      setSelectedCategories((prev) => {
-        if (prev.includes(category)) {
-          return prev.filter((cat) => cat !== category);
-        } else {
-          return [...prev, category];
-        }
-      });
-      console.log(`You clicked the ${category} category`);
+      setSelectedCategory(category);
     }
   };
 
@@ -40,11 +34,10 @@ function HabitCategory() {
             onClick={() => handleCategoryClick(category)}
             className={
               category === "Confirm"
-                ? "other-button"
-                : selectedCategories.includes(category)
-                ? "selected-category"
-                : ""
+                ? (selectedCategory ? "other-button" : "other-button disabled")
+                : (category === selectedCategory ? "selected-category" : "")
             }
+            disabled={category === "Confirm" && !selectedCategory}
           >
             {category}
           </button>

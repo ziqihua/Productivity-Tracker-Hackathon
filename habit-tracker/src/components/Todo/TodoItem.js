@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -17,8 +17,13 @@ export default function TodoItem(props) {
   pictures["Reflect"] = "https://cdn-icons-png.flaticon.com/512/3339/3339551.png ";
   let category = props.habit.category;
 
+  const [isChecked, setChecked] = useState(false);
+  const handleCheckboxChange = () => {
+    setChecked(true);
+  };
+
   return (
-    <Card style={{ height: '200px', width: '100%', padding: '0', marginTop: '10px'}}>
+    <Card style={{ height: '200px', width: '100%', padding: '0', marginTop: '10px', opacity: isChecked ? 0.5 : 1}}>
       <CardContent >
         <Grid container spacing={2} alignItems="center">
           {/* Left Part: Icon */}
@@ -31,12 +36,12 @@ export default function TodoItem(props) {
               {props.habit.title}
             </Typography>
             <Typography variant="body2" color="text.secondary" style={{ marginTop: '10px' }}>
-              {props.habit.description} 
+              {props.habit.category}
             </Typography>
           </Grid>
             <FormControlLabel
-                control={<Checkbox style={{ color: "#00e676" }}  sx={{ '& .MuiSvgIcon-root': { fontSize: 80 } }} />}
-                label="Mark as Done" labelPlacement="bottom"
+                control={<Checkbox checked = {isChecked} onChange={handleCheckboxChange} style={{ color: isChecked ? "gray" : "#00e676" }}  sx={{ '& .MuiSvgIcon-root': { fontSize: 80 } }} disable = {isChecked} />}
+                label={isChecked ? "Completed!" : "Mark as Done"} labelPlacement="bottom"
             />
           </Grid>
       </CardContent>

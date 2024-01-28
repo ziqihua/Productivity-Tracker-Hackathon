@@ -14,13 +14,14 @@ const jobCategories = [
   "Confirm",
 ];
 
-function JobCategory() {
+function JobCategory({ updateCurView }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const handleJobCategoryClick = (category) => {
     if (category === "Confirm") {
-      // Handle the confirm action here
-      console.log("Go to next view");
+      if (selectedCategories.length > 0) {
+        updateCurView(8);
+      }
     } else {
       setSelectedCategories((prev) => {
         if (prev.includes(category)) {
@@ -43,11 +44,14 @@ function JobCategory() {
             onClick={() => handleJobCategoryClick(category)}
             className={
               category === "Confirm"
-                ? "other-button"
+                ? selectedCategories.length > 0
+                  ? "other-button"
+                  : "other-button disabled"
                 : selectedCategories.includes(category)
                 ? "selected-category"
                 : ""
             }
+            disabled={category === "Confirm" && selectedCategories.length === 0}
           >
             {category}
           </button>

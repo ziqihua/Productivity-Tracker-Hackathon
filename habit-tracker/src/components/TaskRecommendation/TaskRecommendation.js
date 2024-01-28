@@ -11,14 +11,16 @@ const taskRecommendations = [
   "Confirm",
 ];
 
-function TaskRecommendation() {
+function TaskRecommendation({ updateCurView }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [customHabit, setCustomHabit] = useState("");
   const [taskFrequencies, setTaskFrequencies] = useState({});
 
   const handleTaskClick = (task) => {
     if (task === "Confirm") {
-      console.log("Go to next view");
+      if (selectedCategories.length > 0) {
+        updateCurView(2);
+      }
     } else {
       toggleTask(task);
     }
@@ -74,7 +76,7 @@ function TaskRecommendation() {
   return (
     <div className="task-recommendation-container">
       <div className="task-recommendation-header">
-        <h1>Task Recommendation</h1>
+        <h2>Task Recommendation</h2>
       </div>
       <div className="task-recommendation-buttons">
         {taskRecommendations.map((task) => (
@@ -83,7 +85,9 @@ function TaskRecommendation() {
             onClick={() => handleTaskClick(task)}
             className={
               task === "Confirm"
-                ? "other-button"
+                ? selectedCategories.length > 0
+                  ? "other-button"
+                  : "other-button disabled"
                 : selectedCategories.includes(task) ||
                   (task === "Build my Own Habit" &&
                     customHabit &&
@@ -91,6 +95,7 @@ function TaskRecommendation() {
                 ? "selected-category"
                 : ""
             }
+            disabled={task === "Confirm" && selectedCategories.length === 0}
           >
             {task}
           </button>
